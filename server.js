@@ -3,6 +3,7 @@ const app = express()
 const expressWs = require('express-ws')(app)
 const axios = require("axios")
 const port = 3000
+app.use(express.json());
 
 const clients = new Set;
 
@@ -18,12 +19,16 @@ let clientsForNotification = new Map;
 
 app.post('/', function (req, res) {
 
+  console.log(req.body)
+
   if (clientsForNotification.has(req.body.idClient.value)) {
     clientsForNotification.delete(req.body.idClient.value)
     clientsForNotification.set(req.body.idClient.value, req.body)
   } else {
     clientsForNotification.set(req.body.idClient.value, req.body)
   }
+
+  console.log(clientsForNotification)
 
 })
 
