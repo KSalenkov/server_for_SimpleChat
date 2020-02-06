@@ -19,16 +19,12 @@ let clientsForNotification = new Map;
 
 app.post('/', function (req, res) {
 
-  console.log(req.body)
-
   if (clientsForNotification.has(req.body.idClient.value)) {
     clientsForNotification.delete(req.body.idClient.value)
     clientsForNotification.set(req.body.idClient.value, req.body)
   } else {
     clientsForNotification.set(req.body.idClient.value, req.body)
   }
-
-  console.log(clientsForNotification)
 
 })
 
