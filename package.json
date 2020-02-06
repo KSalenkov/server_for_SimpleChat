@@ -1,0 +1,16 @@
+{
+  "name": "api-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "express": "*",
+    "express-ws": "*",
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
